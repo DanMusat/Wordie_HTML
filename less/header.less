@@ -1,0 +1,27 @@
+@import "mixins";
+
+/* Header */
+/*-----------------------------------*/
+
+.header {
+	background-color: negation(@color-light, #403c38);
+	.background-size();
+	padding: 9% 0;
+	text-align: center;
+
+	&.big {padding: 14% 0 20%;}
+
+	&, &.big {
+		@media @sm {padding: 14%;}
+		@media @xs {padding: 180px 0 50px;}
+		@media @xxs {padding: 130px 0 36px;}
+	}
+
+	.title {
+		font-size: round(@font-size-h1 * 1.64);
+		color: @color-white;
+		@media @xlg {font-size: round(@font-size-h1 * 1.24);}
+		@media @md {font-size: 50px;}
+		@media @xxs {font-size: 36px;}
+	}
+}

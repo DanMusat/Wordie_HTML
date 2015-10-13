@@ -1,0 +1,462 @@
+@import "mixins";
+
+.postlist-details {
+	padding: 80px 0 0;
+	&.padding-top {padding-top: 110px !important;}
+}
+.page-sidebar .postlist-details {padding: 80px 43px 0;}
+
+@media @xlg {
+	.postlist-details,
+	.page-sidebar .postlist-details {
+		padding: 50px 0 0;
+	}
+}
+
+@media @md {
+	.postlist-details,
+	.page-sidebar .postlist-details {
+		padding: 0;
+	}
+}
+
+/* PostList with More Details */
+/*-----------------------------------*/
+
+.post-details {
+	margin-bottom: 110px;
+
+	.post-title {
+		font-size: @font-size-h2 + 8;
+		text-align: center;
+		margin: 0 1.5em .5em;
+	}
+
+	.post-subtitle {
+		text-align: center;
+		line-height: 1.3;
+		margin: 0 11% 1.5em;
+	}
+
+	.post-meta {margin-bottom: 68px;}
+	.post-media {margin-bottom: 56px;}
+	.post-content {margin-bottom: 30px;}
+
+	&.post-details-author {
+		.post-title {
+			font-size: @font-size-h1 - 2;
+			margin-bottom: .7em;
+
+			a, span {
+				position: relative;
+				display: inline-block;
+				padding-bottom: .7em;
+
+				&:before, &:after {
+					content: '';
+					position: absolute;
+					left: 8%;
+					right: 8%;
+					bottom: 0;
+					height: 2px;
+					background-color: negation(@color-light, #4a4a4a);
+				}
+
+				&:after {
+					left: 36%;
+					right: 36%;
+					bottom: -2px;
+					height: 6px;
+					background-color: negation(@color-light, #403c38);
+				}
+
+			}
+		}
+
+		.post-subtitle {
+			font-size: @font-size-h4 + 2;
+			margin-bottom: 2em;
+		}
+
+		.post-content {
+			text-align: center;
+
+			p {
+				line-height: 2.3;
+				margin-bottom: 2.2em;
+			}
+		}
+	}
+
+	.question {
+		font-family: @font1;
+		font-size: @font-size + 4;
+		@media @xs {font-size: @font-size;}
+		@media @xxs {font-size: @font-size-md;}
+		font-weight: 400;
+		color: @link-color;
+		text-transform: none;
+		margin-bottom: 1em;
+	}
+
+	@media @xlg {
+		.post-title {font-size: @font-size-h2 + 4;}
+
+		&.post-details-author {
+			.post-title {font-size: @font-size-h1 - 8;}
+			.post-subtitle {font-size: @font-size-h4;}
+		}
+	}
+
+	@media @xmd {
+		.post-title {
+			font-size: @font-size-h2 + 4;
+			margin-left: 0;
+			margin-right: 0;
+		}
+		.post-meta {margin-bottom: 50px;}
+		.post-media {margin-bottom: 36px;}
+	}
+
+	@media @md {
+		margin-bottom: 80px;
+		.post-title {font-size: @font-size-h3 + 6;}
+
+		&.post-details-author {
+			.post-title {font-size: @font-size-h3 + 8;}
+			.post-subtitle {
+				font-size: @font-size-h5 - 2;
+				margin: 0 0 1.6em;
+			}
+
+			.post-content p {
+				line-height: 1.8;
+				margin-bottom: 2em;
+			}
+		}
+	}
+
+	@media @sm {
+		&.post-details-author {
+			.post-subtitle {font-size: @font-size-md;}
+		}
+	}
+
+	@media @xs {
+		margin-bottom: 60px;
+		.post-title {font-size: @font-size-h4 + 4;}
+		.post-subtitle {margin-left: 0; margin-right: 0;}
+		.post-meta {margin-bottom: 30px;}
+		.post-media {margin-bottom: 20px;}
+
+		&.post-details-author {
+			.post-title {font-size: @font-size-h3;}
+			.post-subtitle {font-size: @font-size-md;}
+		}
+	}
+
+	@media @xxs {
+		margin-bottom: 45px;
+		.post-title {font-size: @font-size-h5;}
+		.post-meta {margin-bottom: 20px;}
+
+		&.post-details-author {
+			.post-title {font-size: @font-size-h5 + 4;}
+			.post-subtitle {font-size: @font-size-sm;}
+		}
+	}
+}
+
+/* Post Details (Single Post) */
+/*-----------------------------------*/
+
+.post-details-single {
+	padding-top: 50px;
+	margin-bottom: 90px;
+
+	.post-title {
+		font-size: @font-size-h1;
+		margin: 0 1em .7em;
+
+		&.text-left {
+			margin-left: 0;
+			margin-right: 0;
+			text-align: left;
+			@media @xs {text-align: center;}
+		}
+	}
+
+	.post-meta {margin-bottom: 48px;}
+
+	@media @xlg {
+		.post-title {font-size: @font-size-h2 + 4;}
+	}
+
+	@media @lg {
+		.post-title {
+			font-size: @font-size-h2;
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+
+	@media @md {
+		padding-top: 85px;
+		margin-bottom: 60px;
+	}
+
+	@media @sm {
+		padding-top: 110px;
+	}
+
+	@media @xs {
+		margin-bottom: 40px;
+		.post-title {font-size: @font-size-h3 - 4;}
+		.post-meta {margin-bottom: 30px;}
+		.page-about & {margin-bottom: 0;}
+	}
+
+	@media @xxs {
+		padding-top: 90px;
+		.post-title {font-size: @font-size-h5;}
+		.post-meta {
+			margin-bottom: 20px;
+			.post-likes {display: none;}
+		}
+	}
+}
+
+/* Masonry Gallery */
+/*-----------------------------------*/
+
+.masonry {
+	margin: 0 -15px -15px 0;
+
+	.masonry-item {
+		width: 33.33333333%;
+		padding: 0 15px 15px 0;
+
+		&.width2 {width: 66.66666666%;}
+		img {.square(100%);}
+	}
+
+	@media @xs {
+		margin: 0 -4px -4px 0;
+		.masonry-item {padding: 0 4px 4px 0;}
+	}
+}
+
+/* Standard Link, Quote Link */
+/*-----------------------------------*/
+
+.post-image {
+	&.quote,
+	&.link {
+		a, span {
+			&:before {
+				top: 17%;
+				left: 8%;
+				right: 8%;
+				bottom: 19%;
+			}
+
+			&:hover, &:active {
+				&:before {
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+				}
+
+				blockquote {opacity: 0;}
+			}
+		}
+
+		blockquote {
+			font-size: @font-size + 10;
+			line-height: 1.3;
+			color: @color-white;
+			position: absolute;
+			top: 50%;
+			left: 24%;
+			right: 14%;
+			.transform(translateY(-56%));
+			opacity: 1;
+			border-left: 10px solid @color-white;
+			padding-left: 1em;
+			.transition(all @post-transition-duration @post-transition-easing);
+
+			&:before {
+				content: '“';
+				font-family: @font2;
+				font-size: 120px;
+				font-weight: 700;
+				color: @color-white;
+				position: absolute;
+				top: -22px;
+				left: -100px;
+			}
+
+			@media @xmd {font-size: @font-size + 2;}
+			@media @xs {font-size: @font-size-sm;}
+			@media @xs {
+				&:before {
+					font-size: 100px;
+					left: -66px;
+				}
+			}
+			@media @xxs {
+				font-size: @font-size-xs;
+				line-height: 1.3;
+				left: 22%;
+				right: 10%;
+				border-left-width: 6px;
+				padding-left: .5em;
+
+				&:before {
+					font-size: 70px;
+					top: -12px;
+					left: -44px;
+				}
+			}
+		}
+
+		&.small {
+			blockquote {
+				font-size: @font-size + 4;
+				border-left-width: 8px;
+
+				&:before {
+					font-size: 96px;
+					top: -15px;
+					left: -80px;
+				}
+
+				@media @xmd {font-size: @font-size + 2;}
+				@media @xs {
+					font-size: @font-size-sm;
+					&:before {left: -66px;}
+				}
+				@media @xxs {
+					font-size: @font-size-xs;
+					&:before {font-size: 80px; left: -50px;}
+				}
+			}
+		}
+	}
+
+	&.quote {
+		a, span {
+			i {
+				font-family: @font2;
+				font-size: 120px;
+				font-weight: 700;
+				line-height: 1.2;
+			}
+		}
+	}
+
+	&.link {
+		blockquote {
+			border-left: none;
+
+			&:before {
+				content: '\f0c1';
+				position: absolute;
+				top: 50%;
+				left: -80px;
+				margin-top: -40px;
+				border: 3px solid @color-white;
+				.border-radius(50%);
+				.size(80px);
+				.icon-font();
+				font-size: 30px;
+				font-weight: 400;
+				line-height: 74px;
+				color: @color-white;
+				text-align: center;
+
+				@media @xs {
+					left: -50px;
+					margin-top: -25px;
+					border-width: 2px;
+					.size(50px);
+					font-size: 20px;
+					line-height: 46px;
+				}
+			}
+		}
+	}
+}
+
+/* Large Image in Post Details */
+/*-----------------------------------*/
+
+.post-media.large-image {
+	height: 710px;
+	margin: -200px 0 60px;
+
+	.post-image {
+		height: 100%;
+		.background-size();
+		margin: 0;
+	}
+}
+
+.page-sidebar .post-media.large-image {margin: -186px -58px 60px;}
+
+@media @xmd {
+	.post-media.large-image {
+		height: 500px;
+		margin: -170px 0 20px;
+	}
+
+	.page-sidebar .post-media.large-image {
+		height: 400px;
+		margin: -160px -15px 20px;
+	}
+}
+
+@media @md {
+	.post-media.large-image {margin: -120px 0 0;}
+	.page-sidebar .post-media.large-image {margin: -110px -15px -20px;}
+}
+
+@media @sm {
+	.post-media.large-image {height: 400px; margin: -60px 0 -40px;}
+}
+
+@media @xs {
+	.post-media.large-image {height: 300px;}
+	.page-sidebar .post-media.large-image {height: 300px; margin: -60px 0px -70px;}
+}
+
+@media @xxs {
+	.post-media.large-image {height: 200px;}
+	.page-sidebar .post-media.large-image {height: 200px; margin-top: -40px;}
+}
+
+/* Post with Background Image */
+/*-----------------------------------*/
+
+.postlist-image {
+	padding: 150px 0;
+	margin: -120px 0;
+
+	.post-details-single {padding-top: 0;}
+
+	.postlist-inner {
+		background-color: @color-white;
+		padding: 80px 12.46%;
+	}
+
+	@media @sm {
+		.postlist-inner {padding: 70px 6% 20px;}
+	}
+
+	@media @xxs {
+		.postlist-inner {padding: 50px 15px 20px;}
+		.pagination-post {margin-left: -15px; margin-right: -15px;}
+		.social-share {.transform(scale(.5));}
+	}
+}

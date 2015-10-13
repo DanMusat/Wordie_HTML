@@ -1,0 +1,22 @@
+@import "mixins";
+
+/* SideBar */
+/*-----------------------------------*/
+
+.sidebar {
+	background-color: @color-light;
+
+	&.fixed, &.absolute {
+		position: fixed;
+		right: 0;
+		.sidebar-left & {right: auto; left: 0;}
+		bottom: 0;
+	}
+	&.absolute {position: absolute;}
+
+	.title {
+		color: @color-white;
+		margin-bottom: 1.6em;
+		text-align: left;
+	}
+}

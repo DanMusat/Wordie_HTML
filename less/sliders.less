@@ -1,0 +1,221 @@
+@import "mixins";
+
+.fade-effect .item {
+	.opacity(0);
+	.transition(opacity .6s);
+
+	&.active {
+		.opacity(1);
+
+		&.left, &.right {
+			left: 0;
+			z-index: 2;
+			.opacity(0);
+		}
+	}
+}
+
+/* Popular Posts Slider in SideBar */
+/*-----------------------------------*/
+
+.popular-posts-slider {
+	.carousel-indicators {
+		position: absolute;
+		top: 320px;
+		left: auto;
+		right: 0;
+		bottom: auto;
+		width: auto;
+		margin: 0;
+		padding: 0;
+		border: none;
+		.transition();
+
+		li {
+			float: left;
+			.size(50px, 5px);
+			margin: 0 0 0 6px;
+			background-color: negation(@color-light, #1e1e1d);
+			border: none;
+			.border-radius(0);
+			.transition(all .8s);
+			&.active {background-color: negation(@color-light, #403c38);}
+		}
+	}
+}
+
+/* Posts Slider in Content */
+/*-----------------------------------*/
+
+.posts-slider {
+	background-color: difference(@color-white, #161310);
+	padding: 138px 14%;
+	margin: 0 -15px -100px;
+
+	@media @xlg {padding: 100px 12%;}
+	@media @md {margin: 0 0 -100px;}
+	@media @sm {
+		padding: 70px 8%;
+		margin-bottom: -50px;
+	}
+	@media @xs {padding-top: 50px;}
+
+	.carousel-indicators {
+		position: absolute;
+		top: auto;
+		left: 0;
+		right: 0;
+		bottom: 25px;
+		width: auto;
+		margin: 0;
+		padding: 0;
+		border: none;
+		.transition();
+
+		li {
+			display: inline-block;
+			.size(50px, 5px);
+			margin: 0 0 0 6px;
+			background-color: negation(@color-light, #383435);
+			border: none;
+			.border-radius(0);
+			.transition(all .8s);
+			&.active {background-color: difference(@color-light, #141618);}
+		}
+	}
+
+	.carousel-control {
+		position: absolute;
+		top: 50%;
+//		@media @xxs {top: 26px;}
+		left: 4%;
+		z-index: 2;
+		.square(40px);
+		line-height: 34px;
+		margin-top: -20px;
+		border: 3px solid negation(@color-light, #141315);
+		.border-radius(50%);
+		.opacity(1);
+		font-size: 24px;
+		color: negation(@color-light, #141315);
+		text-shadow: none;
+		text-align: center;
+		.transition();
+
+		&.left, &.right {background: none; filter: none;}
+		&.right {left: auto; right: 4%;}
+
+		&:hover, &:active {
+			color: difference(@color-light, #141618);
+			border-color: difference(@color-light, #141618);
+		}
+
+		@media @sm {
+			left: 1%;
+			&.right {left: auto; right: 1%;}
+		}
+	}
+}
+
+/* Slider in Post */
+/*-----------------------------------*/
+
+.post-details .posts-slider {
+	padding: 0;
+	margin: 0;
+
+	.carousel-indicators {
+		li {
+			background-color: @color-white;
+			&.active {background-color: negation(@color-light, #403c38);}
+		}
+	}
+
+	.carousel-control {
+		border-color: @color-white;
+		color: @color-white;
+
+		&:hover, &:active {
+			color: negation(@color-light, #403c38);
+			border-color: negation(@color-light, #403c38);
+		}
+	}
+}
+
+/* Slider Instagram */
+/*-----------------------------------*/
+
+.widget-instagram.slider-instagram {
+	overflow: hidden;
+	text-align: left;
+	position: relative;
+
+	li {
+		display: block;
+		float: left;
+		width: 370px;
+		@media @xmd {width: 304px;}
+		@media @md {width: 242px;}
+		@media @xs {width: 146px;}
+		max-width: none;
+		max-height: none;
+		padding: 0;
+		margin-right: 5px;
+
+		&.active a:before {background-color: transparent;}
+	}
+
+	a {
+		&:before {
+			background-color: fade(@color-white, 30%);
+		}
+
+		&:hover, &:active {
+			&:before {background-color: transparent;}
+		}
+	}
+
+	.scrollbar {
+		margin-top: 44px;
+		@media @xs {margin-top: 26px;}
+		height: 23px;
+
+		.handle {
+			width: 370px;
+			@media @xs {width: 160px;}
+			height: 100%;
+			padding: 9px 10px 0 0;
+		}
+
+		.handle-inner {
+			background-color: negation(@color-light, #141315);
+			position: relative;
+			height: 5px;
+
+			&:before, &:after {
+				content: '';
+				position: absolute;
+				top: -14px;
+				right: -10px;
+				height: 17px;
+				border-top: 16px solid transparent;
+				border-left: 26px solid negation(@color-light, #141315);
+				.transform(rotate(-10deg));
+				.transform-origin(100% 100%);
+			}
+
+			&:after {
+				top: 2px;
+				border-top: none;
+				border-bottom: 16px solid transparent;
+				.transform(rotate(10deg));
+				.transform-origin(100% 0);
+			}
+		}
+
+		.mousearea {
+			.absolute();
+			cursor: pointer;
+		}
+	}
+}

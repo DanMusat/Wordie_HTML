@@ -1,0 +1,71 @@
+@import "mixins";
+
+/* Footer */
+/*-----------------------------------*/
+
+.footer {
+	padding-top: 53px;
+	@media @sm {padding-top: 40px;}
+	background-color: negation(@color-dark, #1c201c);
+
+	.logo {
+		margin-bottom: .6em;
+		@media @xs {margin-bottom: .3em;}
+	}
+
+	.title {
+		color: @color-white;
+	}
+
+	.widget-instagram .title {
+		margin: .7em 0 1.4em;
+		@media @xs {margin: 1.4em 0 .8em;}
+	}
+}
+
+.footer-description {
+	margin-bottom: 120px;
+	@media @lg {margin-bottom: 80px;}
+	@media @sm {margin-bottom: 50px;}
+	@media @xs {margin-bottom: 30px;}
+
+	.description {
+		line-height: 1.8;
+		color: @color-white;
+		text-align: center;
+		padding: 0 12%;
+		@media @lg {padding: 0 6%;}
+	}
+
+}
+
+.footer-bottom {
+	background-color: negation(@color-dark, #090d08);
+	padding: 30px 0;
+	margin-top: 110px;
+	@media @sm {margin-top: 60px;}
+	@media @xxs {
+		padding: 20px 0;
+		margin-top: 40px;
+	}
+
+	.copyright {
+		font-size: @font-size - 2;
+		@media @sm {font-size: @font-size-sm;}
+		@media @xxs {font-size: @font-size-xs;}
+		color: negation(@color-light, #141315);
+
+		@media @xs {
+			text-align: center !important;
+			margin-bottom: .4em;
+		}
+	}
+}
+
+.footer-alt {
+	.footer-bottom {
+		margin-top: 44px;
+		@media @xs {margin-top: 26px;}
+	}
+	.widget-social {margin-bottom: 50px;}
+}

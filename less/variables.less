@@ -1,0 +1,113 @@
+// Media Queries
+@media-xxs:	479px; // Iphone (appears 320px)
+@media-xs:	767px; // Galaxy (appears 480px)
+@media-sm:	1023px; // Ipad Portrait (appears 768px)
+@media-md:	1279px; // Ipad Landscape (appears 1024px)
+@media-xmd:	1439px; // NoteBooks (appears 1280px)
+@media-lg:	1599px; // Large devices (appears 1440px)
+@media-xlg:	1799px; // Large devices (appears 1600px)
+@media-xxs-plus: (@media-xxs + 1);
+@media-xs-plus: (@media-xs + 1);
+@xxs:		~'only screen and (max-width: @{media-xxs})';
+@xs:		~'only screen and (max-width: @{media-xs})';
+@sm:		~'only screen and (max-width: @{media-sm})';
+@md:		~'only screen and (max-width: @{media-md})';
+@xmd:		~'only screen and (max-width: @{media-xmd})';
+@lg:		~'only screen and (max-width: @{media-lg})';
+@xlg:		~'only screen and (max-width: @{media-xlg})';
+@xs-only:	~'(min-width: @{media-xxs-plus}) and (max-width: @{media-xs})';
+@sm-only:	~'(min-width: @{media-xs-plus}) and (max-width: @{media-sm})';
+
+// Transition Options
+@transition-duration: 	.2s; // Transition Duration
+@transition-easing: 	ease-out; // Transition Timing Function
+
+// Post Images Transition Options
+@post-transition-duration: 	.4s; // Transition Duration
+@post-transition-easing: 	@transition-easing; // Transition Timing Function
+
+// Fonts
+@fonts-path:			'fonts'; // Relative path from style.css to the Fonts Folder
+@iconic-font-name:		'FontAwesome'; // Iconic Font Name
+@font1:					'Merriweather', serif;
+@font2:					'Oswald', sans-serif;
+@font3:					'BlackJackRegular', Script;
+
+// Base Colors
+@color-light:			#758591; // Light Color
+@color-dark:			#353d4a; // Dark Color
+@color-white:			#fff; // White Color
+
+// negation(@color-light, #383435);		#adb9c6
+// negation(@color-light, #141315);		#8998a6
+// negation(@color-dark, #090d08);		#3e4a52
+// negation(@color-dark, #1c201c);		#515d66
+// difference(@color-light, #050607);	#707f8a
+// difference(@color-white, #17120a);	#e8edf5
+// negation(@color-light, #1e1e1d);		#93a3ae
+// negation(@color-light, #0f0f0d);		#84949e
+// difference(@color-light, #141618);	#616f79
+// negation(@color-light, #403c38);		#b5c1c9
+// difference(@color-light, #121416);	#63717b
+// difference(@color-white, #211c14);	#dee3eb
+// difference(@color-white, #161310);	#e9ecef
+// negation(@color-light, #4a4a4a);		#bfcfdb
+// negation(@color-light, #2a2627);		#9fabb8
+// difference(@color-white, #120d0a);	#edf2f5
+
+// Global Font
+@font-family:				@font1; // Font Family
+@font-size:					18px; // Font Size
+@font-size-md:				@font-size - 2; // Font Size for Medium Devices
+@font-size-sm:				@font-size - 4; // Font Size for Small Devices
+@font-size-xs:				@font-size - 6; // Font Size for Extra Small Devices
+@font-color:				@color-dark; // Font Color
+@letter-spacing:			0; // Letter Spacing
+
+// Body Background
+@body-background:			@color-white;
+
+// Headings
+@heading-font-family:		@font2; // Headings Font Family
+@font-size-h1:				66px;
+@font-size-h2:				48px;
+@font-size-h3:				36px;
+@font-size-h4:				26px;
+@font-size-h5:				22px;
+@font-size-h6:				18px;
+@heading-font-weight:		700; // Headings Font Weight
+@heading-line-height:		1; // Headings Line Height
+@heading-color:				@color-dark; // Headings Color
+@heading-letter-spacing:	0; // Headings Letter Spacing
+
+// Links
+@link-color:				#0270bb; // Link Color
+@link-color-hover:			darken(@link-color, 10%); // Link Color on Hover
+
+// Buttons
+@button-color:				difference(@color-light, #141618); // Button Color
+@button-color-hover:		negation(@color-dark, #1c201c); // Button Color on Hover
+@button-font-family:		@font2; // Button Font Family
+@button-font-color:			@color-white; // Button Font Color
+@button-font-size:			@font-size; // Button Font Size
+@button-font-weight:		400; // Button Font Weight
+@button-height:				40px; // Button Height
+@button-sm-height:			32px; // Small Button Height
+@button-md-height:			37px; // Medium Button Height
+@button-lg-height:			79px; // Large Button Height
+@button-border-width:		3px; // Button Border Thickness
+@button-border-radius:		0; // Button Border Radius
+
+// Form Elements
+@input-height:				79px; // Input Height
+@input-padding:				1.2em; // Input Padding (left and right)
+@input-margin:				18px; // Input Margin (bottom)
+@input-border-width:		3px; // Input Border Thickness
+@input-border-color:		negation(@color-light, #141315); // Input Border Color
+@input-border-radius:		0; // Input Border Radius
+@input-background-color:	transparent; // Input Background Color
+@input-font-size:			@font-size - 2; // Input Font Size
+@input-font-weight:			400; // Input Font Weight
+@input-font-color:			@color-light; // Input Font Color
+@placeholder-font-color:	@color-light; // Placeholder Font Color
+@label-font-color:			@color-light; // Label Font Color

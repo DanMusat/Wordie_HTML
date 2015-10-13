@@ -1,0 +1,116 @@
+@import "mixins";
+
+/* Buttons */
+/*-----------------------------------*/
+
+.btn:hover, .btn:focus, .btn:active, .btn.active, .btn.disabled, .btn[disabled] {background-color: transparent; outline: none;}
+.btn.active, .btn:active {.box-shadow(none);}
+.btn:focus, .btn:active:focus, .btn.active:focus {outline: none;}
+
+.btn {
+	position: relative;
+	outline: none;
+	vertical-align: top;
+	height: @button-height;
+	line-height: @button-height - @button-border-width * 2;
+	border: @button-border-width solid @button-color;
+	.border-radius(@button-border-radius);
+	background-color: @button-color;
+	font-family: @button-font-family;
+	font-size: @button-font-size;
+	font-weight: @button-font-weight;
+	color: @button-font-color;
+	text-transform: uppercase;
+	white-space: nowrap;
+	letter-spacing: @letter-spacing;
+	padding: 0 @button-height/1.36;
+	.transition();
+
+	&:hover, &:focus, &:active {
+		border-color: @button-color-hover;
+		color: @button-font-color;
+		background-color: @button-color-hover;
+	}
+	&:active {top: 1px;}
+	&.btn-wide {display: block; width: 100%;}
+	&.btn-text-slim {font-weight: 400;}
+	&.btn-border-thick {
+		line-height: @button-height - @button-border-width * 4;
+		border-width: @button-border-width * 2;
+	}
+
+	&.btn-transparent {
+		background-color: transparent;
+		color: @button-color;
+
+		&:hover, &:focus, &:active {
+			border-color: @button-color;
+			background-color: @button-color;
+			color: @button-font-color;
+		}
+	}
+
+	&.btn-light {
+		border-color: negation(@color-light, #141315);
+		background-color: negation(@color-light, #141315);
+
+		&:hover, &:focus, &:active {
+			border-color: negation(@color-dark, #1c201c);
+			background-color: negation(@color-dark, #1c201c);
+		}
+
+		&.btn-transparent {
+			background-color: transparent;
+			color: negation(@color-light, #141315);
+
+			&:hover, &:focus, &:active {
+				border-color: negation(@color-light, #141315);
+				background-color: negation(@color-light, #141315);
+				color: @button-font-color;
+			}
+		}
+	}
+
+	&.btn-white {
+		border-color: @color-white;
+		background-color: @color-white;
+		color: @color-light;
+
+		&:hover, &:focus, &:active {
+			border-color: @color-white;
+			background-color: @color-white;
+		}
+
+		&.btn-transparent {
+			background-color: transparent;
+			color: @color-white;
+
+			&:hover, &:focus, &:active {
+				border-color: negation(@color-dark, #090d08);
+				background-color: negation(@color-dark, #090d08);
+				color: @color-white;
+			}
+		}
+	}
+
+	&.btn-large {
+		height: @button-lg-height;
+		line-height: @button-lg-height - @button-border-width * 2;
+
+		@media @xxs {
+			height: 60px;
+			line-height: 60 - @button-border-width * 2;
+			font-size: @font-size-sm;
+		}
+	}
+
+	&.btn-medium {
+		height: @button-md-height;
+		line-height: @button-md-height - @button-border-width * 2;
+	}
+
+	&.btn-small {
+		height: @button-sm-height;
+		line-height: @button-sm-height - @button-border-width * 2;
+	}
+}

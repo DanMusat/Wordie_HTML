@@ -1,0 +1,190 @@
+@import "mixins";
+
+/* General Styles */
+/*-----------------------------------*/
+
+body {
+	font-family: @font-family;
+	font-size: @font-size;
+	@media @md {font-size: @font-size-md;}
+	@media @sm {font-size: @font-size-sm;}
+	@media @xs {font-size: @font-size-xs;}
+	color: @font-color;
+	letter-spacing: @letter-spacing;
+	background: @body-background;
+	.background-size(cover);
+	position: relative;
+	overflow-x: hidden;
+}
+
+.oldie body {
+	background: none;
+	filter: none;
+	font-size: @font-size + 6;
+	color: @color-dark;
+	text-align: center;
+	padding-top: 200px;
+}
+::-moz-selection {
+	background: @color-dark;
+	color: @color-white;
+	text-shadow: none;
+}
+::selection {
+	background: @color-dark;
+	color: @color-white;
+	text-shadow: none;
+}
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	&.inline {display: inline-block;}
+	.gm-style & {display: inline-block; max-width: none;} // For Google Maps
+}
+embed, iframe {max-width: 100%;}
+.video-player {width: 100%;}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: @heading-font-family;
+	font-weight: @heading-font-weight;
+	line-height: @heading-line-height;
+	color: @heading-color;
+	letter-spacing: @heading-letter-spacing;
+	text-transform: uppercase;
+	word-wrap: break-word;
+	margin-bottom: .4em;
+
+	a {
+		color: @heading-color;
+		&:hover, &:focus, &:active {color: @link-color;}
+	}
+}
+h1 {font-size: @font-size-h1;}
+h2 {font-size: @font-size-h2;}
+h3 {font-size: @font-size-h3;}
+h4 {font-size: @font-size-h4;}
+h5 {font-size: @font-size-h5;}
+h6 {font-size: @font-size-h6;}
+
+@media @xxs {
+	h1 {font-size: 32px;}
+	h2 {font-size: 27px;}
+	h3 {font-size: 22px;}
+	h4 {font-size: 19px;}
+	h5 {font-size: 16px;}
+	h6 {font-size: 14px;}
+}
+
+a {
+	color: @link-color;
+	.transition(color .4s);
+	&:hover, &:active {color: @link-color-hover; text-decoration: none;}
+	&:focus {text-decoration: none; outline: none; color: @link-color;}
+	&:active {background-color: transparent;}
+}
+a.link-underlined {text-decoration: underline;}
+
+em {font-style: italic;}
+strong {font-weight: 700;}
+small {font-size: 85%;}
+pre {border-radius: 0;}
+
+i {
+	position: relative;
+	display: inline-block;
+	text-decoration: none;
+	font-style: normal;
+}
+p {
+	line-height: 1.8;
+	word-wrap: break-word;
+	margin-bottom: 2em;
+}
+code {
+	padding: 2px 4px;
+	font-size: 90%;
+	.border-radius(0);
+}
+.lowercase {text-transform: lowercase;}
+.uppercase {text-transform: uppercase;}
+.overflow-hidden {overflow: hidden !important;}
+
+.margin-bottom-0 {margin-bottom: 0 !important;}
+.margin-bottom-10 {margin-bottom: 10px !important;}
+.margin-bottom-20 {margin-bottom: 20px !important;}
+.margin-bottom-30 {margin-bottom: 30px !important;}
+.margin-bottom-40 {margin-bottom: 40px !important;}
+.margin-bottom-50 {margin-bottom: 50px !important;}
+.margin-bottom-60 {margin-bottom: 60px !important;}
+.margin-bottom-70 {margin-bottom: 70px !important;}
+.margin-bottom-80 {margin-bottom: 80px !important;}
+.margin-bottom-90 {margin-bottom: 90px !important;}
+.margin-bottom-100 {margin-bottom: 100px !important;}
+
+/* General Layout */
+/*-----------------------------------*/
+
+.page {
+	.content {padding: 120px 0;}
+
+	@media @sm {
+		.content {padding-top: 60px; padding-bottom: 50px;}
+	}
+
+	@media @xxs {
+		.content {padding-top: 40px;}
+	}
+
+	&.page-sidebar {
+		.clearfix();
+		overflow: hidden;
+		position: relative;
+
+		.content, .sidebar {
+			float: left;
+			.sidebar-left & {float: right;}
+			min-height: 1px;
+			width: 66.66666666%;
+			padding-bottom: 10000px;
+			margin-bottom: -9900px;
+		}
+
+		.content {
+			padding-top: 106px;
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+
+		.sidebar {
+			width: 33.33333333%;
+
+			[class*='widget-']:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		@media @md {
+			.content {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+
+		@media @sm {
+			.content, .sidebar {
+				float: none;
+				width: auto;
+				padding-bottom: 50px;
+				margin-bottom: 0;
+			}
+
+			.content {padding-top: 60px;}
+		}
+
+		@media @xxs {
+			.content {padding-top: 40px;}
+			.sidebar {padding-bottom: 10px;}
+		}
+	}
+}
